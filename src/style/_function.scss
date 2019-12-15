@@ -1,0 +1,3 @@
+@function getVw($n) {
+  @return ($n/1080) * 100vw;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="referrer" content="no-referrer" />
+    <title>趣味大数据</title>
+    <% preact.headEnd %>
+  </head>
+  <body>
+    <% preact.bodyEnd %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148568844-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'UA-148568844-1', {
+        page_title: '小爱红包',
+        page_path: location.origin + location.pathname + location.hash
+      })
+      gtag('config', 'UA-148568844-1', { send_page_view: false })
+      try {
+        var observer = new PerformanceObserver(function(list) {
+          for (var _iterator = list.getEntries(), _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator](); ; ) {
+            var _ref
+
+            if (_isArray) {
+              if (_i >= _iterator.length) break
+              _ref = _iterator[_i++]
+            } else {
+              _i = _iterator.next()
+              if (_i.done) break
+              _ref = _i.value
+            }
+
+            var entry = _ref
+            var metricName = entry.name
+            var time = Math.round(entry.startTime + entry.duration)
+            var eventName = time < 10000 ? 'performance-event' : 'performance-event-gt10000'
+            var event_category = time < 10000 ? 'Performance Metrics' : 'Performance Metricsgt10000'
+            gtag('event', eventName, {
+              event_category: event_category,
+              event_label: metricName,
+              value: time
+            })
+          }
+        })
+        observer.observe({
+          entryTypes: ['paint']
+        })
+      } catch (e) {
+        console.log(e)
+      }
+    </script>
+    <script>
+      window.UZI_config = { appId: 175, dataSchema: 'performance' }
+    </script>
+    <script async src="https://cdn.cnbj1.fds.api.mi-img.com/mcfe-pieces/uzi/uzi.wrap.js"></script>
+    <script>
+      var url = location.href
+      if (url.indexOf('//preview') > 0 || url.indexOf('http://i-staging') > 0) {
+        document.write('<script src="//cdn.cnbj1.fds.api.mi-img.com/aife/shuangdanshare/vconsole.min.js?v=3.3.0"></scr' + 'ipt>')
+        document.write('<script>window.vConsole = new window.VConsole();</scr' + 'ipt>')
+      }
+    </script>
+  </body>
+</html>
